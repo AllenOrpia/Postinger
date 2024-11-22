@@ -1,20 +1,25 @@
-import { useState } from 'react';
+/* eslint-disable no-unused-vars */
+import { useState, useMemo } from 'react';
 import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
-import HomePage from 'scenes/homePage';
-import LoginPage from 'scenes/loginPage';
-import ProfilePage from 'scenes/profilePage';
+import HomePage from './scenes/homePage';
+import LoginPage from './scenes/loginPage';
+import ProfilePage from './scenes/profilePage';
+import { useSelector } from 'react-redux';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { createTheme } from '@mui/material';
+
+
 
 
 function App() {
-  
-
+  const mode = useSelector((state) => state.mode);
   return (
-    <div className='app'>
+    <div className='app h-[100vh] w-[100vw]'>
       <BrowserRouter>
           <Routes>
-              <Route path="/" element={LoginPage} />
-              <Route path="/home" element={HomePage} />
-              <Route path="/profile/:userId" element={ProfilePage} />
+              <Route path="/" element={<LoginPage />} />
+              <Route path="/home" element={<HomePage />} />
+              <Route path="/profile/:userId" element={<ProfilePage />} />
           </Routes>
       </BrowserRouter>
     </div>

@@ -1,8 +1,8 @@
-import React from 'react'
+
 
 const LoginPage = () => {
   return (
-    <div> Login Page</div>
+    <div className="text-3xl text-center"> Login Page</div>
   )
 }
 
