@@ -1,9 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React from "react"
+import Navbar from "../navbar"
+import { Box } from "@mui/material"
 
 const HomePage = () => {
   return (
-    <div>Homepage</div>
+    <Box>
+      <Navbar /> 
+      <h1>Hello World</h1>
+    </Box>
   )
 }
 
