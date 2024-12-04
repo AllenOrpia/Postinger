@@ -11,6 +11,7 @@ const LoginPage = () => {
     
     <div className="text-3xl text-center"> 
       <Navbar />
+      <h1>Hello World</h1>
       
     Login Page</div>
   )

@@ -11,10 +11,11 @@ import { createTheme } from '@mui/material';
 
 
 
+
 function App() {
   const mode = useSelector((state) => state.mode);
   return (
-    <div className='app h-[100vh] w-[100vw]'>
+    <div className={`app h-[100vh] w-[100vw] ${mode}`} >
       <BrowserRouter>
           <Routes>
               <Route path="/" element={<LoginPage />} />
