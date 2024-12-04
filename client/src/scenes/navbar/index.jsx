@@ -40,17 +40,16 @@ const Navbar = () => {
   const fullName = "Allon";
 
   return (
-    <FlexBetween className="p-4">
-      <FlexBetween>
+    <FlexBetween className="p-4 border-b-2 relative">
+      <FlexBetween className="gap-8 ">
         <Typography
-          className=" font-bold sm:text-base md:text-4xl lg:text-txl hover:translate-y-2"
           onClick={() => navigate("/home")}
         >
-          Postinger
+        <span  className="font-bold sm:text-xl md:text-4xl lg:text-5xl hover:translate-y-2 hover:cursor-pointer text-pink-600">POSTINGER</span> 
         </Typography>
         {isNonMobileScreens && (
-          <FlexBetween>
-            <InputBase placeholder="Search...." />
+          <FlexBetween className="p-2 border-2 border-black rounded-full">
+            <InputBase placeholder="Search...." className="px-2"/>
             <IconButton>
               <Search />
             </IconButton>
@@ -63,10 +62,19 @@ const Navbar = () => {
       {isNonMobileScreens ? (
         <FlexBetween className=" gap-8">
           {/* DARKMODE/LIGHTMODE ICON */}
-          <IconButton onClick={() => dispatch(setMode())}></IconButton>
-          <Message sx={{ fontSize: "25px" }} />
-          <Notifications sx={{ fontSize: "25px" }} />
-          <Help sx={{ fontSize: "25px" }} />
+          <IconButton onClick={() => dispatch(setMode())}>
+            <DarkMode  sx={{ fontSize: "25px" }}/>
+          </IconButton>
+          <IconButton>
+            <Message sx={{ fontSize: "25px" }} />
+          </IconButton>
+          <IconButton>
+            <Notifications sx={{ fontSize: "25px" }} />
+          </IconButton>
+          <IconButton>
+            <Help sx={{ fontSize: "25px" }} />
+          </IconButton>
+
           <FormControl variant="standard" value={fullName}>
             <Select value={fullName} input={<InputBase />}>
               <MenuItem value={fullName}>
@@ -86,23 +94,32 @@ const Navbar = () => {
 
       {/* MOBILE NAVBAR */}
       {!isNonMobileScreens && IsMobileMenuToggled && (
-        <Box className="fixed right-0 bottom-0 h-[100%] z-10 max-w-[500px] min-w-[300px] ">
+        <Box className="fixed right-0 bottom-0 h-[100%] z-10 max-w-[500px] min-w-[300px] p-4  ">
           {/* CLOSE ICON */}
           <Box className="flex justify-end ">
             <IconButton
               onClick={() => setIsMobileMenuToggled(!IsMobileMenuToggled)}
             >
-              <Close className="text-white" />
+              <Close className=""  />
             </IconButton>
           </Box>
 
           {/* MENU ITEMS */}
-          <div className=" flex gap-12 justify-between flex-col items-center content-center bg-black text-white">
+          <div className=" flex gap-12 justify-between flex-col items-center content-center ">
             {/* DARKMODE/LIGHTMODE ICON */}
-            <IconButton onClick={() => dispatch(setMode())}></IconButton>
-            <Message sx={{ fontSize: "25px" }} />
-            <Notifications sx={{ fontSize: "25px" }} />
-            <Help sx={{ fontSize: "25px" }} />
+            <IconButton onClick={() => dispatch(setMode())}>
+              <LightMode />
+            </IconButton>
+            <IconButton>
+              <Message sx={{ fontSize: "25px" }} />  
+            </IconButton>
+            <IconButton>
+              <Notifications sx={{ fontSize: "25px" }} />
+            </IconButton>
+            <IconButton>
+              <Help sx={{ fontSize: "25px" }} />
+            </IconButton>
+
             <FormControl variant="standard" value={fullName}>
               <Select value={fullName} input={<InputBase />}>
                 <MenuItem value={fullName}>
