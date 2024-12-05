@@ -1,19 +1,31 @@
-/* eslint-disable no-unused-vars */
-import {
-  Box, Typography, useMediaQuery
+
+import { Typography, useMediaQuery
 } from '@mui/material';
 
+
 import Navbar from '../navbar'
+import { useSelector } from 'react-redux';
 
 const LoginPage = () => {
-  const isNonMobileScreens = useMediaQuery("min-width: 1000px")
+  const mode = useSelector( (state) => state.mode);
+  const isNonMobileScreens = useMediaQuery("(min-width:1000px)")
   return (
+    <main>
+      <div className={`${mode} w-full p-4 text-center`}>
+        <Typography>
+          Postinger
+        </Typography>
+      </div>
+      <div className={isNonMobileScreens ? "w-[50%] p-8 mx-8 my-auto bg-white" : "w-[90%] p-8 mx-8 my-auto bg-white" }>
+          <Typography>
+            Welcome to Postinger!
+          </Typography>
+      </div>
+
+
+
+    </main>
     
-    <div className="text-3xl text-center"> 
-      <Navbar />
-      <h1>Hello World</h1>
-      
-    Login Page</div>
   )
 }
 
