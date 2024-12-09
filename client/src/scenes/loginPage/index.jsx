@@ -5,6 +5,7 @@ import { Typography, useMediaQuery
 
 import Navbar from '../navbar'
 import { useSelector } from 'react-redux';
+import Form from './Form';
 
 const LoginPage = () => {
   const mode = useSelector( (state) => state.mode);
@@ -20,6 +21,7 @@ const LoginPage = () => {
           <Typography>
             Welcome to Postinger!
           </Typography>
+          <Form />
       </div>
 
 
