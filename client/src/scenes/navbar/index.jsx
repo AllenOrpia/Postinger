@@ -41,7 +41,7 @@ const Navbar = () => {
   const fullName = "Allon";
 
   return (
-    <FlexBetween className={`p-4 border-b-2 relative `}>
+    <FlexBetween className={`p-4 border-b-2 relative`}>
       <FlexBetween className="gap-8 ">
         <Typography onClick={() => navigate("/home")}>
           <span className="font-bold sm:text-xl md:text-4xl lg:text-5xl hover:translate-y-2 hover:cursor-pointer text-pink-600">
@@ -65,7 +65,7 @@ const Navbar = () => {
       {/* DESKTOP NAV */}
 
       {isNonMobileScreens ? (
-        <FlexBetween className=" gap-8">
+        <FlexBetween className="gap-8">
           {/* DARKMODE/LIGHTMODE ICON */}
           <IconButton onClick={() => dispatch(setMode())}>
             <DarkMode sx={{ fontSize: "25px" }} className={`${mode}`} />

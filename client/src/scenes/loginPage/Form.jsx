@@ -195,7 +195,7 @@ const Form = () => {
                         {...getRootProps()}
                         className="border-2 border-dashed p-4 hover:cursor-pointer"
                       >
-                        <input {...getInputProps} />
+                        <input {...getInputProps()} />
                         
                         {!values.picture ? (
                           <p>Add Picture Here</p>
