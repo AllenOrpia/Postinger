@@ -18,13 +18,13 @@ function App() {
           <Route path="/" element={<LoginPage />} />
           <Route
             path="/home"
-            // element={isAuth ? <HomePage /> : <Navigate to="/" />}
-            element={<HomePage />}
+            element={isAuth ? <HomePage /> : <Navigate to="/" />}
+            // element={<HomePage />}
           />
           <Route
             path="/profile/:userId"
-            // element={isAuth ? <ProfilePage /> : <Navigate to="/" />}
-            element={<ProfilePage />}
+            element={isAuth ? <ProfilePage /> : <Navigate to="/" />}
+            // element={<ProfilePage />}
           />
         </Routes>
       </BrowserRouter>

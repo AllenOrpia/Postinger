@@ -37,8 +37,8 @@ const Navbar = () => {
   const mode = useSelector((state) => state.mode);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
-  // const fullName = `${user.firstName} ${user.lastName}`
-  const fullName = "Allon";
+  const fullName = `${user.firstName} ${user.lastName}`
+  // const fullName = "Allon";
 
   return (
     <FlexBetween className={`p-4 border-b-2 relative`}>

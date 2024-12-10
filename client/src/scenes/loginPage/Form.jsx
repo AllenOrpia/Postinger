@@ -196,7 +196,7 @@ const Form = () => {
                         className="border-2 border-dashed p-4 hover:cursor-pointer"
                       >
                         <input {...getInputProps()} />
-                        
+
                         {!values.picture ? (
                           <p>Add Picture Here</p>
                         ) : (
@@ -231,14 +231,14 @@ const Form = () => {
               name="password"
               error={Boolean(touched.password) && Boolean(errors.password)}
               helperText={touched.password && errors.password}
-              className="col-span-4"
+              sx={{ gridColumn: "span 4" }}
             />
           </Box>
 
           {/* BUTTONS */}
 
           <Box>
-            <button className=" w-full mx-8 py-0 p-4" type="submit">
+            <button className=" w-full  py-0 p-4 bg-blue-500" type="submit">
               {isLogin ? "LOGIN" : "REGISTER"}
             </button>
             <Typography
