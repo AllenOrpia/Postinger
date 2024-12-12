@@ -1,31 +1,35 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import Navbar from "../navbar";
-import { useMediaQuery } from "@mui/material";
+import { useMediaQuery, Box } from "@mui/material";
 import { useSelector } from "react-redux";
+import UserWidget from "../widgets/UserWidget";
+import UserImage from "../../components/UserImage";
+import UseWidget from "../widgets/UseWidget";
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
-  // const { _id, picturePath } = useSelector((state) => state.user);
+  const { _id, picturePath } = useSelector((state) => state.user);
 
   return (
-    <div>
+    <main>
       <Navbar />
-      <div
+     
+       <div
         className={
           isNonMobileScreens
-            ? "flex w-full py-8 px-[6%] gap-2 justify-between"
+            ? "flex w-full py-8 px-[6%] gap-2 justify-between "
             : "w-full py-8 px-[6%] gap-2"
         }
-
       >
-        <div className={
-          isNonMobileScreens ? "basis-[25%]" : undefined
-        }>
-
+        <div className="">
+          <UserWidget userId={_id} picturePath={picturePath} />
         </div>
-      </div>
-    </div>
+        <div className={isNonMobileScreens ? "basis-[42%]" : undefined}></div>
+        {isNonMobileScreens && <div className="basis-[25%]"></div>}
+      </div> 
+     
+    </main>
   );
 };
 
