@@ -32,23 +32,22 @@ const loginSchema = yup.object().shape({
   password: yup.string().required("required"),
 });
 
-const initialValuesRegister = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-  location: "",
-  occupation: "",
-  picture: "",
-};
-
-const initialValuesLogin = {
-  email: "",
-  password: "",
-};
 
 const Form = () => {
   const [pageType, setPageType] = useState("login");
+  const [initialValuesRegister, setInitialValuesRegister] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    location: "",
+    occupation: "",
+    picture: "",
+  });
+  const [initialValuesLogin, setInitialValuesLogin] = useState({
+    email: "",
+    password: "",
+  });
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isNonMobile = useMediaQuery("(min-width:600px)");

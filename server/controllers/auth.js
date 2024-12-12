@@ -27,7 +27,7 @@ export const register = async (req, res) => {
       firstName,
       lastName,
       email,
-      passwordHash,
+      password: passwordHash,
       picturePath,
       friends,
       location,
@@ -42,6 +42,7 @@ export const register = async (req, res) => {
     // Generate or send the response back to the frontend
     res.status(201).json(savedUser);
   } catch (err) {
+    console.log(err.message);
     res.status(500).json({ error: err.message });
   }
 };
