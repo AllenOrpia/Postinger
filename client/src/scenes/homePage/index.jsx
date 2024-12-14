@@ -5,7 +5,7 @@ import { useMediaQuery, Box } from "@mui/material";
 import { useSelector } from "react-redux";
 import UserWidget from "../widgets/UserWidget";
 import UserImage from "../../components/UserImage";
-import UseWidget from "../widgets/UseWidget";
+
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
