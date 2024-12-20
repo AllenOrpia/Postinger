@@ -7,8 +7,6 @@ import {
   WorkOutlineOutlined,
 } from "@mui/icons-material";
 import UserImage from "../../components/UserImage";
-import FlexBetween from "../../components/FlexBetween";
-import WidgetWrapper from "../../components/WidgetWrapper";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -49,7 +47,7 @@ const UserWidget = ({ userId, picturePath }) => {
   } = user;
 
   return (
-    <div className={`border-2 p-8 rounded-lg ${mode}`}>
+    <div className={`widgetWrapper ${mode}`}>
       {/* FIRST ROW */}
       <div
         className="gap-2 pb-4 flex justify-between items-center "

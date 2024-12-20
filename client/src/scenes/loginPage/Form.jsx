@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLogin } from "../../state";
 import Dropzone from "react-dropzone";
-import FlexBetween from "../../components/FlexBetween";
+
 
 // SCHEMAS
 const registerSchema = yup.object().shape({
@@ -199,10 +199,10 @@ const Form = () => {
                         {!values.picture ? (
                           <p>Add Picture Here</p>
                         ) : (
-                          <FlexBetween>
+                          <div className="flexBetween">
                             <Typography>{values.picture.name}</Typography>
                             <EditOutlinedIcon />
-                          </FlexBetween>
+                          </div>
                         )}
                       </Box>
                     )}

@@ -25,7 +25,7 @@ import {
 
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import FlexBetween from "../../components/FlexBetween";
+
 import { setMode, setLogout } from "../../state";
 import { Input } from "postcss";
 
@@ -41,15 +41,15 @@ const Navbar = () => {
   // const fullName = "Allon";
 
   return (
-    <FlexBetween className={`p-4 border-b-2 relative`}>
-      <FlexBetween className="gap-8 ">
+    <div className={`flexBetween p-4 border-b-2`}>
+      <div className="flexBetween gap-8 ">
         <Typography onClick={() => navigate("/home")}>
           <span className="font-bold sm:text-xl md:text-4xl lg:text-5xl hover:translate-y-2 hover:cursor-pointer text-pink-600">
             POSTINGER
           </span>
         </Typography>
         {isNonMobileScreens && (
-          <FlexBetween className={`p-2 border-2 rounded-full ${mode}`}>
+          <div className={`p-2 border-2 rounded-full ${mode}`}>
             <InputBase
               placeholder="Search...."
               className={` px-2`}
@@ -58,14 +58,14 @@ const Navbar = () => {
             <IconButton>
               <Search className={`${mode}`} />
             </IconButton>
-          </FlexBetween>
+          </div>
         )}
-      </FlexBetween>
+      </div>
 
       {/* DESKTOP NAV */}
 
       {isNonMobileScreens ? (
-        <FlexBetween className="gap-8">
+        <div className="gap-8 flexBetween">
           {/* DARKMODE/LIGHTMODE ICON */}
           <IconButton onClick={() => dispatch(setMode())}>
             <DarkMode sx={{ fontSize: "25px" }} className={`${mode}`} />
@@ -95,7 +95,7 @@ const Navbar = () => {
               <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
             </Select>
           </FormControl>
-        </FlexBetween>
+        </div>
       ) : (
         <IconButton
           onClick={() => setIsMobileMenuToggled(!IsMobileMenuToggled)}
@@ -106,15 +106,15 @@ const Navbar = () => {
 
       {/* MOBILE NAVBAR */}
       {!isNonMobileScreens && IsMobileMenuToggled && (
-        <Box className="fixed right-0 bottom-0 h-[100%] z-10 max-w-[500px] min-w-[300px] p-4  ">
+        <div className="fixed right-0 bottom-0 h-[100%] z-10 max-w-[500px] min-w-[300px] p-4">
           {/* CLOSE ICON */}
-          <Box className="flex justify-end ">
+          <div className="flex justify-end ">
             <IconButton
               onClick={() => setIsMobileMenuToggled(!IsMobileMenuToggled)}
             >
               <Close className={`${mode}`} />
             </IconButton>
-          </Box>
+          </div>
 
           {/* MENU ITEMS */}
           <div className=" flex gap-12 justify-between flex-col items-center content-center ">
@@ -153,9 +153,9 @@ const Navbar = () => {
               </Select>
             </FormControl>
           </div>
-        </Box>
+        </div>
       )}
-    </FlexBetween>
+    </div>
   );
 };
 
