@@ -39,7 +39,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   return (
     <div className="flexBetween">
       <div className="flexBetween gap-4">
-        <UserImage image={userPicturePath} size={"55px"} />
+        <UserImage image={userPicturePath} size="60px" />
         <div
           onClick={() => {
             navigate(`/profile/${friendId}`);

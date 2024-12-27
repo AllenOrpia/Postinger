@@ -7,6 +7,8 @@ import UserWidget from "../widgets/UserWidget";
 import UserImage from "../../components/UserImage";
 import MyPostWidget from "../../scenes/widgets/MyPostWidget"
 import PostsWidget from "../../scenes/widgets/PostsWidget";
+import AdvertWidget from "../../scenes/widgets/AdvertWidget";
+import FriendListWidget from "../../scenes/widgets/FriendListWidget";
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
@@ -25,7 +27,7 @@ const HomePage = () => {
         }
       >
 
-        <div className="">
+        <div className={isNonMobileScreens ? "basis-[26%]" : undefined}>
           <UserWidget userId={_id} picturePath={picturePath} />
         </div>
 
@@ -34,7 +36,12 @@ const HomePage = () => {
           <PostsWidget userId={_id} />
         </div>
         
-        {isNonMobileScreens && <div className="basis-[25%]"></div>}
+        {isNonMobileScreens && <div className="basis-[25%]">
+          <AdvertWidget />
+          <div className="my-8 mx-0"></div>
+          <FriendListWidget userId={_id} />
+  
+          </div>}
       </div>
     </main>
   );

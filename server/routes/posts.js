@@ -11,7 +11,7 @@ const router = express.Router();
 
 /* READ */
 router.get("/", verifyToken, getFeedPosts);
-router.get("/:userId");
+router.get("/:userId", verifyToken, getUserPosts);
 
 
 

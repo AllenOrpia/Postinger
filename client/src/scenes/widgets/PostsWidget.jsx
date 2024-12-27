@@ -24,19 +24,15 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   };
 
   const getUserPosts = async () => {
-    try {
-      const response = await fetch(
-        `http://localhost:3001/posts/${userId}/posts`,
-        {
-          method: "GET",
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-      const data = await response.json();
-      dispatch(setPosts({ posts: data }));
-    } catch (err) {
-      console.log(err.message);
-    }
+    const response = await fetch(
+      `http://localhost:3001/posts/${userId}`,
+      {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
+    const data = await response.json();
+    dispatch(setPosts({ posts: data }));
   };
 
   useEffect(() => {
