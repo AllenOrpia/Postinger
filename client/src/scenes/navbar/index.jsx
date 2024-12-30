@@ -37,11 +37,11 @@ const Navbar = () => {
   const mode = useSelector((state) => state.mode);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
-  const fullName = `${user.firstName} ${user.lastName}`
+  const fullName = `${user.firstName} ${user.lastName}`;
   // const fullName = "Allon";
 
   return (
-    <div className={`flexBetween p-4 border-b-2`}>
+    <div className={`flexBetween p-4 border-b-2 `}>
       <div className="flexBetween gap-8 ">
         <Typography onClick={() => navigate("/home")}>
           <span className="font-bold sm:text-xl md:text-4xl lg:text-5xl hover:translate-y-2 hover:cursor-pointer text-pink-600">
@@ -49,7 +49,7 @@ const Navbar = () => {
           </span>
         </Typography>
         {isNonMobileScreens && (
-          <div className={`p-2 border-2 rounded-full ${mode}`}>
+          <div className={`p-2 border-2 rounded-full }`}>
             <InputBase
               placeholder="Search...."
               className={` px-2`}
@@ -106,7 +106,7 @@ const Navbar = () => {
 
       {/* MOBILE NAVBAR */}
       {!isNonMobileScreens && IsMobileMenuToggled && (
-        <div className="fixed right-0 bottom-0 h-[100%] z-10 max-w-[500px] min-w-[300px] p-4">
+        <div className={`fixed right-0 bottom-0 h-[100%] max-w-[500px] min-w-[300px] p-4 z-50 bg-gray-50 ${mode}`}>
           {/* CLOSE ICON */}
           <div className="flex justify-end ">
             <IconButton
@@ -117,7 +117,7 @@ const Navbar = () => {
           </div>
 
           {/* MENU ITEMS */}
-          <div className=" flex gap-12 justify-between flex-col items-center content-center ">
+          <div className=" flex gap-12 justify-between flex-col items-center content-center  ">
             {/* DARKMODE/LIGHTMODE ICON */}
             <IconButton onClick={() => dispatch(setMode())}>
               <LightMode className={`${mode}`} />

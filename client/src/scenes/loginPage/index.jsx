@@ -11,8 +11,8 @@ const LoginPage = () => {
   const mode = useSelector( (state) => state.mode);
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)")
   return (
-    <main>
-      <div className={`${mode} w-full p-4 text-center`}>
+    <main className='h-[100vh] w-[100vw]'>
+      <div className={` w-full p-4 text-center`}>
         <Typography>
           Postinger
         </Typography>

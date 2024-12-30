@@ -12,7 +12,7 @@ function App() {
   const mode = useSelector((state) => state.mode);
   const isAuth = Boolean(useSelector((state) => state.token));
   return (
-    <div className={`app h-[100vh] w-[100vw] ${mode}`}>
+    <div className={`app bg-gray-50 text-gray-950 ${mode} min-h-screen `}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LoginPage />} />
@@ -28,6 +28,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
+      
     </div>
   );
 }

@@ -32,10 +32,10 @@ const ProfilePage = () => {
   
 
   return (
-    <main className={`${mode}`}>
+    <main className="  " >
       <Navbar />
 
-      <div
+      <section
         className={
           isNonMobileScreens
             ? "flex w-full py-8 px-[6%] gap-8 center "
@@ -53,7 +53,7 @@ const ProfilePage = () => {
         </div>
 
         
-      </div>
+      </section>
     </main>
   );
 };

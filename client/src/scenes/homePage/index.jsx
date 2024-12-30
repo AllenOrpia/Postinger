@@ -16,22 +16,22 @@ const HomePage = () => {
   const mode = useSelector( (state) => state.mode)
 
   return (
-    <main className={`${mode}`}>
+    <main className="">
       <Navbar />
 
       <div
         className={
           isNonMobileScreens
-            ? "flex w-full py-8 px-[6%] gap-2 justify-between "
-            : "w-full py-8 px-[6%] gap-2"
+            ? "flex w-full py-8 px-[6%] gap-8 justify-between "
+            : "w-full py-8 px-[6%]  "
         }
       >
 
-        <div className={isNonMobileScreens ? "basis-[26%]" : undefined}>
+        <div className={isNonMobileScreens ? "basis-[25%]" : undefined}>
           <UserWidget userId={_id} picturePath={picturePath} />
         </div>
 
-        <div className={isNonMobileScreens ? "basis-[42%]" : undefined}>
+        <div className={isNonMobileScreens ? "basis-[50%]" : "my-4"}>
           <MyPostWidget picturePath={picturePath} />
           <PostsWidget userId={_id} />
         </div>
@@ -43,6 +43,7 @@ const HomePage = () => {
   
           </div>}
       </div>
+      
     </main>
   );
 };
